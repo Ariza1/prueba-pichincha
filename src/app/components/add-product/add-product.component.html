@@ -1,0 +1,51 @@
+<div class="card-form">
+  <h2>Formulario de Registro</h2>
+  <form [formGroup]="form" (ngSubmit)="save()">
+    <div class="center-inputs">
+      <div class="form-control">
+        <label for="id">ID</label>
+        <input *ngIf="!edit" type="text" id="id" formControlName="id" [class.is-invalid]="form.get('id')?.dirty && (form.get('id')?.hasError('required') || form.get('id')?.hasError('minlength') || form.get('id')?.hasError('naxlength') || form.get('id')?.hasError('invalidId'))">
+        <input *ngIf="edit" type="text" id="id" formControlName="idD">
+        <span class="message-error" *ngIf="form.get('id')?.touched && form.get('id')?.hasError('required')">Este campo es requerido</span>
+        <span class="message-error" *ngIf="form.get('id')?.dirty && (form.get('id')?.hasError('minlength') || form.get('id')?.hasError('maxlength') )">Este campo debe contener de 3 a 10 caracteres.</span>
+        <span class="message-error" *ngIf="form.get('id')?.dirty && form.get('id')?.hasError('invalidId')">ID no válido!</span>
+      </div>
+      <div class="form-control">
+        <label for="name">Nombre</label>
+        <input type="text" id="name" formControlName="name" [class.is-invalid]="form.get('name')?.dirty && form.get('name')?.hasError('required')">
+        <span class="message-error" *ngIf="form.get('name')?.touched && form.get('name')?.hasError('required')">Este campo es requerido</span>
+        <span class="message-error" *ngIf="form.get('name')?.dirty && (form.get('name')?.hasError('minlength') || form.get('name')?.hasError('maxlength') )">Este campo debe contener de 5 a 100 caracteres.</span>
+      </div>
+    </div>
+    <div class="center-inputs">
+      <div class="form-control">
+        <label for="description">Descripción</label>
+        <input type="text" id="description" formControlName="description" [class.is-invalid]="form.get('description')?.dirty && form.get('description')?.hasError('required')">
+        <span class="message-error" *ngIf="form.get('description')?.touched && form.get('description')?.hasError('required')">Este campo es requerido</span>
+        <span class="message-error" *ngIf="form.get('description')?.dirty && (form.get('description')?.hasError('minlength') || form.get('description')?.hasError('maxlength') )">Este campo debe contener de 10 a 200 caracteres.</span>
+      </div>
+      <div class="form-control">
+        <label for="logo">Logo</label>
+        <input type="text" id="logo" formControlName="logo" [class.is-invalid]="form.get('logo')?.dirty && form.get('logo')?.hasError('required')">
+        <span class="message-error" *ngIf="form.get('logo')?.touched && form.get('logo')?.hasError('required')">Este campo es requerido</span>
+      </div>
+    </div>
+    <div class="center-inputs">
+      <div class="form-control">
+        <label for="date_release">Fecha Liberación</label>
+        <input type="date" id="date_release" formControlName="date_release"
+        [class.is-invalid]="form.get('date_release')?.dirty && (form.get('date_release')?.hasError('required') || form.get('date_release')?.hasError('beforeToday'))">
+        <span class="message-error" *ngIf="form.get('date_release')?.dirty && form.get('date_release')?.hasError('required')">Este campo es requerido</span>
+        <span class="message-error" *ngIf="form.get('date_release')?.dirty && form.get('date_release')?.hasError('beforeToday')">La fecha no puede ser mayor al día de hoy.</span>
+      </div>
+      <div class="form-control">
+        <label for="date_revision">Fecha Revisión</label>
+        <input type="date" id="date_revision" formControlName="date_revisionD">
+      </div>
+    </div>
+    <div class="content-butons">
+      <button type="button" class="secondary">Reiniciar</button>
+      <button type="submit" class="primary" [disabled]="form.invalid">Enviar</button>
+    </div>
+  </form>
+</div>

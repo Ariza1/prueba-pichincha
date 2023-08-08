@@ -1,1 +1,90 @@
 /* You can add global styles to this file, and also import other style files */
+
+@import url("https://fonts.googleapis.com/css2?family=Mulish:wght@400;700&family=Roboto:wght@300;400;500;700&display=swap");
+// regular style toast
+@import "~ngx-toastr/toastr";
+body {
+  padding: 0px;
+  margin: 0px;
+  font-family: "Roboto", Arial, Helvetica, sans-serif;
+  app-list-products {
+    width: 95%;
+  }
+  app-add-product {
+    width: 30%;
+  }
+  input[type="text"],
+  input[type="date"] {
+    border-radius: 5px;
+    padding: 10px;
+  }
+  .form-control {
+    width: 48%;
+    display: inline-block;
+    margin-bottom: 18px;
+    position: relative;
+    label {
+      font-size: 15px;
+      font-weight: 500;
+    }
+    input[type="text"],
+    input[type="date"] {
+      display: block;
+      width: calc(100% - 25px);
+      &.is-invalid {
+        outline: 1px solid red;
+        border: 1px solid red;
+      }
+    }
+    .message-error {
+      color: red;
+      font-size: 10px;
+      position: absolute;
+      margin-top: 2px;
+      line-height: 8px;
+    }
+  }
+  button {
+    &.primary {
+      background-color: #fade4b;
+    }
+    &.primary,
+    &.secondary {
+      color: #2b3653;
+      font-weight: 600;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      padding: 10px 15px;
+      min-width: 80px;
+      &:disabled {
+        opacity: 0.7;
+        cursor: no-drop;
+      }
+    }
+    &.secondary {
+      background-color: #e9ebf2;
+    }
+  }
+  ul.menu-options {
+    display: none;
+    padding: 0px;
+    margin: 0px;
+    position: absolute;
+    background-color: #fff;
+    z-index: 1;
+    box-shadow: 3px 3px 4px 0px #d6d5d5;
+    li {
+      padding: 5px 10px;
+      list-style: none;
+      border-top: 1px solid #ccc;
+      cursor: pointer;
+      &:hover{
+        background-color: #f3f3f3;
+      }
+      &:first-child{
+        border: none;
+      }
+    }
+  }
+}

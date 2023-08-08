@@ -1,0 +1,31 @@
+<table class="product-table">
+  <caption></caption>
+  <thead>
+    <tr>
+      <th>Logo</th>
+      <th>Nombre del Prducto</th>
+      <th>Descripción</th>
+      <th>Fecha Liberación</th>
+      <th>Fecha Reestructuración</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let product of listProduct; let i = index">
+      <td><img [src]="product.logo" alt="logo del producto"></td>
+      <td>{{product.name}}</td>
+      <td>{{product.description}}</td>
+      <td>{{product.date_release| date: 'dd/MM/yyyy'}}</td>
+      <td>{{product.date_revision| date: 'dd/MM/yyyy'}}</td>
+      <td>
+        <a (click)="visibleElement = visibleElement === i ? null : i" class="lista">
+          <img id="menu" src="assets/icons/more_vert_black_24dp.svg" alt="mende opciones">
+          <ul class="menu-options" [@detailExpand]="i == visibleElement ? 'expanded' : 'collapsed'">
+            <li><a id="editar" (click)="goToEdit(product)">Editar</a></li>
+            <li><a id="delete" (click)="deleteProduct(product.id)">Eliminar</a></li>
+          </ul>
+        </a>
+      </td>
+    </tr>
+  </tbody>
+</table>

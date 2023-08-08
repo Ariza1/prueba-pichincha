@@ -1,0 +1,40 @@
+table {
+  background-color: #fff;
+  border-width: 0px;
+  border-collapse: collapse;
+  width: 100%;
+  thead {
+    background-color: #f9fafc;
+    tr {
+      th {
+        padding: 15px 0px;
+      }
+    }
+  }
+  tbody {
+    tr {
+      td {
+        border-top: 2px #edeff5 solid;
+        border-bottom: 2px #edeff5 solid;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        text-align: center;
+        > img {
+          max-width: 70px;
+        }
+        > a {
+          display: block;
+          cursor: pointer;
+          // &:hover {
+          //    ul {
+          //     display: block;
+          //   }
+          // }
+        }
+        &:last-child {
+          position: relative;
+        }
+      }
+    }
+  }
+}

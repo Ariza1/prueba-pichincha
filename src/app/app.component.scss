@@ -1,0 +1,13 @@
+header {
+  display: flex;
+  justify-content: center;
+  padding: 19px 15px;
+  background-color: #fff;
+}
+main#principal {
+  background-color: #f4f6f9;
+  height: calc(100vh - 142px);
+  padding-top: 50px;
+  display: flex;
+  justify-content: center;
+}

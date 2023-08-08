@@ -1,0 +1,22 @@
+.card-form {
+  background-color: #fff;
+  width: initial;
+  padding-top: 30px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  h2{
+    text-align: center;
+  }
+  form {
+    width: inherit;
+    border-top: 2px solid #a7a7a9;
+    padding: 10px 20px 30px 20px;
+    .center-inputs{
+      display: flex;
+      justify-content: space-between;
+    }
+    .content-butons{
+      display: flex;
+      justify-content: space-evenly;
+    }
+  }
+}

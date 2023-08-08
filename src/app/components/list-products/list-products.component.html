@@ -1,0 +1,11 @@
+<div id="content-table">
+  <div id="content-options">
+    <form [formGroup]="formFilter"><input type="text" placeholder="Search..." formControlName="search"></form>
+    <button class="primary" (click)="goToAdd()">Agregar</button>
+  </div>
+  <app-table-product [products]="filteredProducts"></app-table-product>
+
+    <span id="result">{{filteredProducts.length}} Resultados</span>
+</div>
+
+
